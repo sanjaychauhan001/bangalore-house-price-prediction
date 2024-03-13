@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>House price prediction</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/36/Bangalore_.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        h1 {background: linear-gradient(skyblue,lightgreen);
+            text-align: center;
+            background-repeat: no-repeat;
+            margin-top: 20px;    
+        }
+
+        p {text-align: center;
+            background: linear-gradient(skyblue,lightgreen);
+            font-size: 35px;
+            background-repeat: no-repeat;
+        }
+
+        form {
+            background-color: #F0FFFF;
+            border-radius: 15px;
+            padding: 5px;
+            width: 30%;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 7px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+    <body>
+        
+        <h1 style="font-size:40px;">Welcome to Bengaluru House Price Prediction</h1><br>
+
+        <form action="/predict" method="POST">
+            <label for="location">Select Location:</label>
+            <select name="location" id="location">
+                {% for location in locations %}
+                <option value="{{ location }}">{{ location }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="bath">Select Bathrooms:</label>
+            <select name="bath" id="bath">
+                {% for bath in baths %}
+                <option value="{{ bath }}">{{ bath }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="sqft">Area (Square foot):</label>
+            <input type="number" id="sqft", name="sqft", required><br><br>
+
+            <label for="bhks">Select bhk</label>
+            <select name="bhk" id="bhk">
+                {% for bhk in bhks %}
+                <option value="{{ bhk }}">{{ bhk }}</option>
+                {% endfor %}
+            </select><br><br>
+            <button type="submit">Predict</button>
+        </form>
+        {% if message%}
+        <p>{{message}}</p>
+        {% endif%}
+    </body>
+</html>
