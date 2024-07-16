@@ -6,4 +6,6 @@ plotly
 scikit-learn
 streamlit
 scipy
-flask
+Flask
+gunicorn
+
