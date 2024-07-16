@@ -4,6 +4,6 @@ seaborn
 matplotlib
 plotly
 scikit-learn
-streamlit
 scipy
 flask
+gunicorn
