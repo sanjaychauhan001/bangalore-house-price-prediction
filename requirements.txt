@@ -4,8 +4,8 @@ seaborn
 matplotlib
 plotly
 scikit-learn
-streamlit
+
 scipy
 Flask
-gunicorn
+gunicorn==20.1.0
 
