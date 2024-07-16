@@ -1,8 +1,8 @@
 from flask import Flask,render_template,request,redirect
 import pickle
 import numpy as np
-model = pickle.load(open('C:\\Users\\sanjay\\Documents\\All working files\\projects\\Bengaluru house price prediction\\model.pkl','rb'))
-df = pickle.load(open('C:\\Users\\sanjay\\Documents\\All working files\\projects\\Bengaluru house price prediction\\df.pkl','rb'))
+model = pickle.load(open('model.pkl','rb'))
+df = pickle.load(open('df.pkl','rb'))
 location = sorted(df['location'].unique())
 bhk = sorted(df['BHK'].unique())
 bath = sorted(df['bath'].unique())
